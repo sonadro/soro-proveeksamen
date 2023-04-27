@@ -22,3 +22,7 @@ module.exports.logout_get = (req, res) => {
 module.exports.veileder_get = (req, res) => {
     res.render('veileder', { title: 'Veileder'});
 };
+
+module.exports.adminveilder_get = (req, res) => {
+    res.render('adminveileder', { title: 'Admin Veileder' });
+};

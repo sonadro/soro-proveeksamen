@@ -1,0 +1,41 @@
+<%- include('partials/header') %>
+    <!-- css -->
+    <link rel="stylesheet" href="/css/adminguide.css">
+
+    <div class="main">
+        <h2><%= title %></h2>
+
+        <div class="lagTutorial">
+            <h3>Hvordan lage et nytt produkt:</h3>
+            <p>Fyll ut informasjonen om skoen, og trykk "Opprett produkt":</p>
+            <img src="/img/adminVeileder/Screenshot_1.png" alt="">
+        </div>
+
+        <div class="oppdaterTutorial">
+            <h3>Hvordan oppdatere et produkt:</h3>
+            <p>Først, så må du velge et produkt i scroll-menyen:</p>
+            <img src="/img/adminVeileder/Screenshot_2.png" alt="">
+
+            <p>Når du har valgt et produkt, så vil informasjonen i feltene autofylles, slik at du kan se "hele" produktet:</p>
+            <img src="/img/adminVeileder/Screenshot_3.png" alt="">
+
+            <p>Du vil også kunne se ID'en til produktet. Dette feltet trenger du ikke å endre. Hvert produkt har en unik ID, og denne ID'en blir brukt til å finne produktet i databasen, slik at det kan oppdateres.</p>
+            <img src="/img/adminVeileder/Screenshot_4.png" alt="">
+
+            <p>Nå kan du endre informasjonen i feltene, og trykke "Oppdater produkt":</p>
+            <img src="/img/adminVeileder/Screenshot_5.png" alt="">
+        </div>
+
+        <div class="slettTutorial">
+            <h3>Hvordan slette et produkt:</h3>
+            <p>Her er det ganske likt som når du oppdaterer et produkt. Først må du velge et produkt i scroll-menyen:</p>
+            <img src="/img/adminVeileder/Screenshot_6.png" alt="">
+
+            <p>Når du har valgt produktet, så vil du her også kunne se ID'en til produktet, i tillegg til tittelen og artikkelnummeret.</p>
+            <img src="/img/adminVeileder/Screenshot_7.png" alt="">
+
+            <p>Og til sist, trykk "Slett produkt". Da fjernes produktet fra databasen, og vil ikke vises på nettsiden.</p>
+        </div>
+    </div>
+
+<%- include('partials/footer') %>
