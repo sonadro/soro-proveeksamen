@@ -1,0 +1,40 @@
+form {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+form * {
+    display: inline-block;
+    margin: 10px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.dropdown {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: fit-content;
+    height: 200px;
+
+    /* display: inline-block; */
+    
+    border: 2px solid black;
+}
+
+.velgProdukt {
+    cursor: pointer;
+}
+
+.valgtProdukt {
+    background-color: lightgray;
+}
+
+#slettProdukt {
+    width: 25ch;
+}
+
+.hidden {
+    display: none;
+}

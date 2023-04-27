@@ -7,8 +7,8 @@ module.exports.login_get = (req, res) => {
     res.render('login', { title: 'Logg inn' });
 };
 
-module.exports.addProdukt_get = (req, res) => {
-    res.render('addProdukt', { title: 'Legg til produkt' });
+module.exports.admin_get = (req, res) => {
+    res.render('admin', { title: 'Admin' });
 };
 
 module.exports.produkter_get = (req, res) => {

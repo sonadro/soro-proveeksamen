@@ -1,0 +1,70 @@
+<%- include('partials/header') %>
+    <!-- css -->
+    <link rel="stylesheet" href="/css/admin.css">
+
+    <div class="main">
+        <h1><%= title %></h1>
+    </div>
+
+    <form class="addProduktForm">
+        <h2>Legg til produkt:</h2><br>
+
+        <label for="tittel">Tittel:</label>
+        <input type="text" name="tittel" id="tittel"><br>
+        
+        <label for="modell">Modell:</label>
+        <input type="text" name="modell" id="modell"><br>
+        
+        <label for="merke">Merke:</label>
+        <input type="text" name="merke" id="merke"><br>
+        
+        <label for="pris">Pris:</label>
+        <input type="number" name="pris" id="pris"><br>
+        
+        <label for="artikkelnummer">Artikkelnummer:</label>
+        <input type="text" name="artikkelnummer" id="artikkelnummer"><br>
+
+        <button type="submit">Opprett produkt</button>
+    </form>
+
+    <form class="oppdaterProduktForm">
+        <h2>Oppdater produkt:</h2><br>
+
+        <label for="velgProdukt">Velg produkt som skal oppdateres:</label>
+        <input type="text" name="velgProdukt" id="velgProdukt">
+        <div class="dropdown velgProduktDropdown hidden"></div>
+        <button class="toggleVelgProduktDropdown">Vis produkter</button><br>
+
+        <label for="oppdaterTittel">Tittel:</label>
+        <input type="text" name="oppdaterTittel" id="oppdaterTittel"><br>
+        
+        <label for="oppdaterModell">Modell:</label>
+        <input type="text" name="oppdaterModell" id="oppdaterModell"><br>
+        
+        <label for="oppdaterMerke">Merke:</label>
+        <input type="text" name="oppdaterMerke" id="oppdaterMerke"><br>
+        
+        <label for="oppdaterPris">Pris:</label>
+        <input type="number" name="oppdaterPris" id="oppdaterPris"><br>
+        
+        <label for="oppdaterArtikkelnummer">Artikkelnummer:</label>
+        <input type="text" name="oppdaterArtikkelnummer" id="oppdaterArtikkelnummer"><br>
+
+        <button type="oppdaterSubmit">Oppdater produkt</button>
+    </form>
+
+    <form class="slettProduktForm">
+        <h2>Slett produkt:</h2><br>
+
+        <label for="slettProdukt">Velg produkt som skal slettes:</label><br>
+        <div class=" dropdown velgSlettProduktDropdown"></div><br>
+        <p>Produktet du valgte: <span class="slettProduktTittel"></span></p><br>
+        <input type="text" name="slettProdukt" id="slettProdukt">
+
+        <button type="submit">Slett produkt</button>
+    </form>
+
+    <!-- script -->
+    <script src="/js/adminSide.js" defer></script>
+
+<%- include('partials/footer') %>
