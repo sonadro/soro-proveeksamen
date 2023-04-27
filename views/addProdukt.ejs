@@ -1,0 +1,31 @@
+<%- include('partials/header') %>
+    <!-- css -->
+    <link rel="stylesheet" href="/css/opprettprodukt.css">
+
+    <div class="main">
+        <h1><%= title %></h1>
+    </div>
+
+    <form class="produktForm">
+        <label for="tittel">Tittel:</label>
+        <input type="text" name="tittel" id="tittel"><br>
+        
+        <label for="modell">Modell:</label>
+        <input type="text" name="modell" id="modell"><br>
+        
+        <label for="merke">Merke:</label>
+        <input type="text" name="merke" id="merke"><br>
+        
+        <label for="pris">Pris:</label>
+        <input type="number" name="pris" id="pris"><br>
+        
+        <label for="artikkelnummer">Artikkelnummer:</label>
+        <input type="text" name="artikkelnummer" id="artikkelnummer"><br>
+
+        <button type="submit">Opprett produkt</button>
+    </form>
+
+    <!-- script -->
+    <script src="/js/addProdukt.js" defer></script>
+
+<%- include('partials/footer') %>

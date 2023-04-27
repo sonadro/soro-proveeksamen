@@ -1,0 +1,12 @@
+.produkt {
+    display: inline-block;
+    border: 2px solid black;
+    border-radius: 16px;
+    width: 200px;
+    margin: 15px;
+}
+
+.produkt * {
+    padding-left: 15px;
+    padding-right: 15px;
+}

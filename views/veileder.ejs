@@ -1,0 +1,83 @@
+<%- include('partials/header') %>
+
+    <!-- css -->
+    <link rel="stylesheet" href="/css/guide.css">
+
+    <div class="guide">
+        <h2>Hvordan lage en Linux-bruker med ssh-nøkkelpålogging:</h2>
+
+        <p>Begynn med å åpne Windows PowerShell, og sjekk om du har en ssh-nøkkel. PS: Hvis du ikke har en ssh-nøkkel, så kan du skrive "ssh-keygen" i terminalen.</p>
+        <img src="/img/Screenshot_1.png" alt=""><br>
+
+        <p><a id="ssh-nøkkel">Hvis du har en ssh-nøkkel, så kan du skrive åpne .ssh mappen og skrive "cat id_rsa.pub", for å se og kopiere ssh-nøkkelen.</a></p>
+        <img src="/img/Screenshot_2.png" alt=""><br>
+
+        <p>Nå skal vi koble oss til Linux-serveren: Skriv "ssh dittBrukernavn@dinIpAdresse" for å koble til serveren. Under ser du et eksempel. Merk: Når du skriver passordet, så vises ikke det du skriver.</p>
+        <img src="/img/Screenshot_3.png" alt=""><br>
+
+        <p>Når vi har koblet til serveren, ser det slik ut:</p>
+        <img src="/img/Screenshot_4.png" alt=""><br>
+
+        <p>For å få administratorrettigheter, så skriv "sudo su" (For å gjøre dette, trenger du en bruker med administratorrettigheter).</p>
+        <img src="/img/Screenshot_5.png" alt=""><br>
+
+        <p>For å lage en ny bruker, skriv "adduser brukernavn". Etter du har trykket enter, skal du skrive passordet til brukeren.<br>PS: Her vil du heller ikke se det du skriver.</p>
+        <img src="/img/Screenshot_6.png" alt=""><br>
+
+        <p>Når du har skrevet passordet, så vil du få beskjed om å skrive fullt navn, romnummer, osv. Du trenger ikke å fylle ut dette, men det kan være greit å gjøre for å ha oversikt. Når du har fyllt ut informasjonen, trykk y og enter for å lage brukeren. Hvis du har skrevet noe feil, så kan du trykke n og enter. Da vil du kunne endre informasjonen.</p>
+        <img src="/img/Screenshot_7.png" alt=""><br>
+        
+        <p>For å gi administratorrettigheter til en bruker, så kan du skrive "usermod -aG sudo brukernavn":</p>
+        <img src="/img/Screenshot_8.png" alt=""><br>
+
+        <p>Nå skal vi legge til vår egen ssh-nøkkel til brukeren, slik at vi ikke trenger å skrive inn passord hver gang vi logger inn. For å gjøre dette, naviger først til brukeren med kommandoen "cd /home/brukernavn". Når vi er i mappen til brukeren, så kan vi lage en mappe som heter .ssh. For å gjøre det, bruk kommandoen "mkdir .ssh". Når det er gjort, naviger til mappen med "cd .ssh". Nå skal vi lage en fil som heter authorized_keys. Før du gjør dette, må du kopiere ssh-nøkkelen din som du fant <a href="#ssh-nøkkel">tidligere.</a></p>
+        <img src="/img/Screenshot_9.png" alt=""><br>
+
+        <p>For å åpne redigeringsprogrammet kan du skrive "nano authorized_keys". Da lager du en fil som heter authorized_keys, og filen åpnes for redigering.</p>
+        <img src="/img/Screenshot_10.png" alt=""><br>
+
+        <p>Siden du allerede har kopiert ssh-nøkkelen, kan du høyreklikke i terminalen for å lime inn nøkkelen. Når du har limt inn nøkkelen, trykk CTRL+O og enter for å lagre, og CTRL+X for å lukke filen.</p>
+        <img src="/img/Screenshot_11.png" alt=""><br>
+
+        <p>For å teste at alt har fungert så langt, skriv "exit" så du kommer tilbake til din egen pc's terminal.</p>
+        <img src="/img/Screenshot_12.png" alt=""><br>
+
+        <p>Nå kan du skrive "ssh brukernavn@dinIpAdresse" for å logge inn på serveren. Men denne gangen behøver du ikke å skrive inn passordet!</p>
+        <img src="/img/Screenshot_13.png" alt=""><br>
+
+        <p>For å sjekke at du har administratorrettigheter, skriv "sudo su", og skriv inn passordet. Hvis det fungerer, så har du gjort alt riktig.</p>
+        <img src="/img/Screenshot_14.png" alt=""><br>
+
+
+
+        <br><br><h2><a id="nodeApplikasjon">Hvordan kjøre en node-applikasjon på en Linux-server:</a></h2>
+
+        <p>Først, naviger til /var mappen, og lag en mappe som heter www. Bruk kommandoene "cd /var" for å navigere til /var, og "mkdir www" for å lage www-mappen.</p>
+        <img src="/img/Screenshot_15.png" alt=""><br>
+
+        <p>Etter du har laget www-mappen, naviger til den med "cd www". Nå kan du klone et prosjekt fra GitHub. For å gjøre dette, skriv "git clone", og lim in lenken til GitHub-prosjektet.</p>
+        <img src="/img/Screenshot_16.png" alt=""><br>
+
+        <p>Når git laster ned prosjektet på serveren, ser det slik ut:</p>
+        <img src="/img/Screenshot_17.png" alt=""><br>
+
+        <p>Nå kan du navigere til den nye mappen som ble laget.</p>
+        <img src="/img/Screenshot_18.png" alt=""><br>
+
+        <p>Før vi kan kjøre applikasjonen, må vi laste ned et par ting. Bruk "apt install nodejs" for å installere Node.</p>
+        <img src="/img/Screenshot_19.png" alt=""><br>
+
+        <p>Bruk "apt install npm" for å installere Node Package Manager.</p>
+        <img src="/img/Screenshot_20.png" alt=""><br>
+
+        <p>For å laste ned alle Node-pakker som blir brukt i prosjektet, skriv "npm i".</p>
+        <img src="/img/Screenshot_21.png" alt=""><br>
+
+        <p>Etter Node Package Manager har lastet ned alle pakkene, ser det slik ut:</p>
+        <img src="/img/Screenshot_22.png" alt=""><br>
+
+        <p>Og nå kan du starte applikasjonen din:</p>
+        <img src="/img/Screenshot_23.png" alt=""><br>
+    </div>
+
+<%- include('partials/footer') %>

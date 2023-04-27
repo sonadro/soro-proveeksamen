@@ -1,0 +1,25 @@
+nav ul li {
+    position: relative;
+    list-style: none;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+nav ul li a {
+    font-size: 24px;
+}
+
+nav {
+    border-bottom: 2px solid black;
+}
+
+.leftNav {
+    position: relative;
+    float: right;
+    margin-top: 42px;
+    margin-right: 50px;
+}
