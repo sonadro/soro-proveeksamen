@@ -48,14 +48,7 @@ module.exports.get_produkter = async (req, res) => {
 module.exports.get_produktID = async (req, res) => {
     // finn alle produkters ID og tittel:
     try {
-        const produkter = await product.aggregate([
-            {
-              '$project': {
-                'tittel': true, 
-                'artikkelnummer': true
-              }
-            }
-        ]);
+        const produkter = await product.find({ });
 
         res.status(200).send({
             status: 'Ok!',
@@ -71,7 +64,23 @@ module.exports.get_produktID = async (req, res) => {
 };
 
 module.exports.oppdater_produkt = async (req, res) => {
-    console.log('oppdater produkt');
+    const produkt = req.body.parcel.produkt;
+    const produktId = req.body.parcel.id;
+
+    try {
+        const oldDoc = await product.findOne({ _id: produktId });
+        await oldDoc.updateOne(produkt);
+
+        res.status(200).send({
+            status: 'Dokumentet er oppdatert'
+        });
+    } catch(err) {
+        console.error(err);
+        res.status(400).send({
+            status: 'Kunne ikke oppdater dokument',
+            err
+        });
+    }
 };
 
 module.exports.slett_produkt = async (req, res) => {
